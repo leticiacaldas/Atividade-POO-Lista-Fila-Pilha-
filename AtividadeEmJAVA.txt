@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class ListaInteiros {
+    private List<Integer> lista;
+
+    public ListaInteiros() {
+        lista = new ArrayList<>();
+    }
+
+    public void insere(int v) {
+        lista.add(0, v); 
+    }
+
+    public void retira() {
+        if (!lista.isEmpty()) {
+            lista.remove(0); 
+        }
+    }
+
+    public int primeiro() {
+        if (!lista.isEmpty()) {
+            return lista.get(0);
+        }
+        return -1; 
+    }
+
+    public int size() {
+        return lista.size();
+    }
+}
+
+class Fila extends ListaInteiros {
+    public void enfileira(int v) {
+        insere(v);
+    }
+
+    public void desenfileira() {
+        retira();
+    }
+
+    public int frente() {
+        return primeiro();
+    }
+}
+
+class Pilha extends ListaInteiros {
+    public void push(int v) {
+        insere(v);
+    }
+
+    public void pop() {
+        retira();
+    }
+
+    public int topo() {
+        return primeiro();
+    }
+}
+
