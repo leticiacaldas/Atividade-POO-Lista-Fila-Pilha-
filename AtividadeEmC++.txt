@@ -1,0 +1,60 @@
+#include <list>
+
+class ListaInteiros {
+private:
+    std::list<int> lista;
+
+public:
+    ListaInteiros() {}
+
+    void insere(int v) {
+        lista.push_front(v); // Inserir no início
+    }
+
+    void retira() {
+        if (!lista.empty()) {
+            lista.pop_front(); // Retirar do início
+        }
+    }
+
+    int primeiro() {
+        if (!lista.empty()) {
+            return lista.front();
+        }
+        return -1; // ou outra indicação de lista vazia
+    }
+
+    int size() {
+        return lista.size();
+    }
+};
+
+class Fila : public ListaInteiros {
+public:
+    void enfileira(int v) {
+        insere(v);
+    }
+
+    void desenfileira() {
+        retira();
+    }
+
+    int frente() {
+        return primeiro();
+    }
+};
+
+class Pilha : public ListaInteiros {
+public:
+    void push(int v) {
+        insere(v);
+    }
+
+    void pop() {
+        retira();
+    }
+
+    int topo() {
+        return primeiro();
+    }
+};
