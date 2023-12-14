@@ -8,12 +8,12 @@ public:
     ListaInteiros() {}
 
     void insere(int v) {
-        lista.push_front(v); // Inserir no início
+        lista.push_front(v); 
     }
 
     void retira() {
         if (!lista.empty()) {
-            lista.pop_front(); // Retirar do início
+            lista.pop_front(); 
         }
     }
 
@@ -21,7 +21,7 @@ public:
         if (!lista.empty()) {
             return lista.front();
         }
-        return -1; // ou outra indicação de lista vazia
+        return -1; 
     }
 
     int size() {
